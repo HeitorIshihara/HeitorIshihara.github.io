@@ -1,11 +1,59 @@
 <!doctype html>
 
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <!-- Google Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-9192855932150247",
+                enable_page_level_ads: true
+            });
+    </script>
 </head>
 
 <body>
-    <h1>Teste 2</h1>
+    <h1 id="main-title">Troca Texto</h1>
+    <hr><br>
+    <textarea id="initial-textarea" rows="15" placeholder="Insira seu texto aqui"></textarea>
+    <br><br>
+
+    <div id="form-div">
+        <form id="main-form" onsubmit="validateForm()">
+
+            <div id="form-left-div">
+                <div id="findword-div">
+                    <label for="findword">Palavra ou texto que irá ser trocado</label><br>
+                    <textarea id="findword" class="swap-inputs" form="main-form" rows="4" placeholder="Digite aqui"></textarea>
+                </div>
+                <br>
+                <div id="replacementword-div">
+                    <label for="replacementword">Palavra ou texto que será usado para substituir</label><br>
+                    <textarea id="replacementword" class="swap-inputs" form="main-form" rows="4" placeholder="Digite aqui"></textarea>
+                </div>
+                <br><br>
+                <input id="replace-button" form="main-form" type="submit" value="Troca!">
+            </div>
+
+            <div id="checkbox-div">
+                <input type="checkbox" id="case-sensitive-checkbox" name="case-sensitive-checkbox" value="CaseSense">
+                <label for="case-sensitive-checkbox">Ignorar letras maiúsculas e minúsculas</label>
+            </div>
+        </form>
+
+        <br><br>
+        <label id="result-textarea-label" for="result-textarea" hidden>Pronto!</label>
+        <button id="copy-button" onclick="copy()" hidden>Copiar para área de transferência</button>
+        <br><br>
+        <textarea id="result-textarea" style="height: 50px;" hidden></textarea>
+    </div>
+    
+ 
 </body>
 
 </html>
