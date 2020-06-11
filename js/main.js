@@ -33,16 +33,15 @@ function replace() {
     }
     resultTextArea.value = result;
 
+    resultTextArea.hidden = false;
+    resultTextAreaLabel.hidden = false;
+    copyButton.hidden = false;
+
     if(resultTextArea.offsetHeight < resultTextArea.scrollHeight) {
         resultTextArea.style.height = resultTextArea.scrollHeight + "px";
     } else {
         resultTextArea.style.height = "50px";
     }
-
-    resultTextArea.hidden = false;
-    resultTextAreaLabel.hidden = false;
-    copyButton.hidden = false;
-
 }
 
 function copy() {
